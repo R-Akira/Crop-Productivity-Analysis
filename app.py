@@ -119,21 +119,16 @@ summary = '''
 
 ***
 ### Summary
-Dash apps can be written in Markdown.
-Dash uses the [CommonMark](http://commonmark.org/)specification of Markdown.
-Check out their [60 Second Markdown Tutorial](http://commonmark.org/help/)
-if this is your first introduction to Markdown!
-Markdown includes syntax for things like **bold text** and *italics*,
-[links](http://commonmark.org/help), inline `code` snippets, lists,
-quotes, and more.
+
+
+In order to create a model to predict productivity from rain and sun activity it was necessary to select a specific region with a known rain pattern. The reason for that is that rain is variable that has particular cycle according to each region. The sunspot otherwise has the same pattern at its origin and even though it will impact each region differently the variation for all of them will follow the same cycles. The third dataset is the productivity dataset for the selected crops and from the region matching the rain data.
+In our case we have selected Brazil as our focus region and coffee, lemon and maize as our crops.
 
 ![alt text][id]
 
 [id]: https://github.com/R-Akira/Crop-Productivity-Dashboard/blob/master/Assets/globe.png?raw=True "Title"
 
 
-In order to create a model to predict productivity from rain and sun activity it was necessary to select a specific region with a known rain pattern. The reason for that is that rain is variable that has particular cycle according to each region. The sunspot otherwise has the same pattern at its origin and even though it will impact each region differently the variation for all of them will follow the same cycles. The third dataset is the productivity dataset for the selected crops and from the region matching the rain data.
-In our case we have selected Brazil as our focus region and coffee, lemon and maize as our crops.
 
 '''
 
@@ -166,7 +161,7 @@ analysis_three = '''
 ### Seasonal Factors
 
 Looking at the seasonal factors for each crop, we can see that coffee has a very clear differentiation in terms of rain seasonality, while lemon and maize only display minimal variation for the two year cycle.
-Regarding sunspots cycle we can see that all three crops are significantly impacted by it, with coffee oscillating up to 25%, lemon uo to 10% and maize up to 36%
+Regarding sunspots cycle we can see that all three crops are significantly impacted by it, with coffee oscillating up to 25%, lemon up to 10% and maize up to 36%
 
 
 ![alt text][id]
