@@ -13,7 +13,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, assets_external_path = external_stylesheets)
 
 app.scripts.config.serve_locally = True
-
+server = app.server
 
 ############################################################## crops plot
 
