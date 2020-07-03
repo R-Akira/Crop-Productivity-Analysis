@@ -5,7 +5,6 @@ import dash_html_components as html
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import pandas as pd
-import os
 import datetime
 
 
@@ -16,9 +15,7 @@ app = dash.Dash(__name__, assets_external_path = external_stylesheets)
 app.scripts.config.serve_locally = True
 
 
-##############################################################
-
-os.chdir("/Users/user/Desktop/Crop Dashboard")
+############################################################## crops plot
 
 
 
@@ -56,7 +53,7 @@ crops_fig.update_layout(
 crops_fig.update_xaxes(showline=True, linewidth=2, linecolor='black')
 crops_fig.update_yaxes(showline=True, linewidth=2, linecolor='black')
 
-##############################################################
+############################################################## rain plot
 
 
 rain    = pd.read_csv("https://raw.githubusercontent.com/R-Akira/Crop-Productivity-Dashboard/master/Assets/complete_rain.csv")
@@ -83,7 +80,7 @@ rain_fig.update_layout(
 rain_fig.update_xaxes(showline=True, linewidth=2, linecolor='black')
 rain_fig.update_yaxes(showline=True, linewidth=2, linecolor='black')
 
-##############################################################
+############################################################## sunspot plot
 
 
 sunspot = pd.read_csv("https://raw.githubusercontent.com/R-Akira/Crop-Productivity-Dashboard/master/Assets/complete_sunspot.csv")
@@ -108,57 +105,6 @@ sunspot_fig.update_xaxes(showline=True, linewidth=2, linecolor='black')
 sunspot_fig.update_yaxes(showline=True, linewidth=2, linecolor='black')
 
 
-##############################################################
-
-coffee  = pd.read_excel("coffee_complete2.xlsx")
-
-
-
-coffee_fig = go.Figure(data=[
-                      go.Bar(x=coffee.Year, y=coffee.Value, marker_color='crimson', name = 'value'),
-                      go.Scatter(x=coffee.Year, y=coffee.MA_12, name = 'moving average_rain',line=dict(color='blue', width=1)),
-                      go.Scatter(x=coffee.Year, y=coffee.ma_12, name = 'moving average_sunspot',line=dict(color='orange', width=1))],
-                      layout= {
-                          'paper_bgcolor' : 'rgba(0,0,0,0)', 
-                          'plot_bgcolor' : 'rgba(0,0,0,0)'
-                          }
-                      )
-
-
-coffee_fig.update_layout(title_text="Coffee Output", title_x = 0.5)
-
-
-##############################################################
-maize   = pd.read_excel("maize_complete2.xlsx")
-
-maize_fig = go.Figure(data=[
-                      go.Bar(x=maize.Year, y=maize.Value, marker_color='crimson', name = 'value'),
-                      go.Scatter(x=maize.Year, y=maize.MA_12, name = 'moving average_rain',line=dict(color='blue', width=1)),
-                      go.Scatter(x=maize.Year, y=maize.ma_12, name = 'moving average_sunspot',line=dict(color='orange', width=1))],
-                      layout= {
-                          'paper_bgcolor' : 'rgba(0,0,0,0)', 
-                          'plot_bgcolor' : 'rgba(0,0,0,0)'
-                          }
-                      )
-
-
-maize_fig.update_layout(title_text="Maize Output", title_x = 0.5)
-
-##############################################################
-lemon   = pd.read_excel("lemons_complete2.xlsx")
-
-lemon_fig = go.Figure(data=[
-                      go.Bar(x=lemon.Year, y=lemon.Value, marker_color='crimson', name = 'value'),
-                      go.Scatter(x=lemon.Year, y=lemon.MA_12, name = 'moving average_rain',line=dict(color='blue', width=1)),
-                      go.Scatter(x=lemon.Year, y=lemon.ma_12, name = 'moving average_sunspot',line=dict(color='orange', width=1))],
-                      layout= {
-                          'paper_bgcolor' : 'rgba(0,0,0,0)', 
-                          'plot_bgcolor' : 'rgba(0,0,0,0)'
-                          }
-                      )
-
-
-lemon_fig.update_layout(title_text="Lemon Output", title_x = 0.5)
 
 ############################################################## markdown
 
